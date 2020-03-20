@@ -1,0 +1,45 @@
+//字符串溢出处理
+var geTres = function (str = '', len) {
+  if (str.length > len) {
+    return str.slice(0, len) + "..."
+  } else {
+    return str
+  }
+}
+
+//时间截取处理
+var getMyTime = function (str = '', len) {
+  if (str.length > len) {
+    return str.slice(0, len)
+  } else {
+    return str
+  }
+}
+
+var threeNum = function (num) {
+  var num = (num || 0).toString();
+  var result = '';
+  while (num.length > 3) {
+    result = '.' + num.slice(-3) + result;
+    num = num.slice(0, num.length - 3);
+  }
+  if (num) {
+    result = num + result;
+  }
+  // 处理小数点后保留一位数
+  return parseFloat(result).toFixed(1);
+}
+
+// 小数点后保留两位数
+var numn = function(num){
+  var num = (num || 0).toString();
+  return num.toFixed(2)
+}
+
+
+module.exports = {
+  geTres: geTres,
+  getMyTime: getMyTime,
+  threeNum: threeNum,
+  numn:numn
+}

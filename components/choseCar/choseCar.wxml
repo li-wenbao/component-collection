@@ -1,0 +1,10 @@
+<view wx:if='{{show}}' class="masks">
+	<view class='mask' bindtap='clickOutMask'></view>
+	<view class='modal-content' style='height:{{height}}'>
+		<view class="close-box" bindtap="closebox">
+			<view class="close">
+			</view>
+		</view>
+		<slot></slot>
+	</view>
+</view>
